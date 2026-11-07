@@ -1,0 +1,64 @@
+:root {
+    font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+    color: #B72818;
+    background: #f5f7fb;
+    line-height: 1.5
+}
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0
+}
+
+a {
+    color: inherit
+}
+
+.contenedor {
+    max-width: 1080px;
+    margin: auto;
+    padding: 0 20px
+}
+
+.cabecera {
+    background: #B72818;
+    color: #f5f7fb;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding-top: 18px;
+    padding-bottom: 18px
+}
+
+.marca {
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-decoration: none
+}
+
+.navbar nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap
+}
+
+.navbar nav a {
+    text-decoration: none;
+    font-size: .92rem
+}
+
+.pie {
+    padding: 25px;
+    text-align: center;
+    background: #B72818;
+    color: #f5f7fb;
+    font-size: .85rem
+}
