@@ -1,29 +1,22 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cinema Paraíso</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <header class="cabecera">
-        <div class="contenedor navbar">
-            <a class="marca" href="index.php">Cinema Paraíso</a>
-            <nav aria-label="Navegación principal">
-                <a href="index.php">Cartelera</a>
-                <a href="index.php">Mis Entradas</a>
-                <a href="index.php">Preferencias</a>
-                <a href="index.php">Sesión</a>
-            </nav>
-        </div>
-    </header>
-    <main class="contenedor">
+<?php
+require_once __DIR__ . '/includes/peliculas.php';
+require_once __DIR__ . '/includes/funciones.php';
+cabecera('Cartelera');
+?>
 
-    </main>
-    <footer class="pie">
-        Proyecto didáctico de DAW - Belén Jiménez Sánchez
-    </footer>
+<section class="intro">
+    <p class="etiqueta">Proyecto DAW - Entorno Servidor</p>
+    <h1>Cartelera</h1>
+    <p>¿Te adentras en el fantástico mundo del cine?</p>
+</section>
+<div class="peliculas">
+    <?php foreach($peliculas as $id => $pelicula): ?>
+        <article class="tarjeta">
+            <div class="ilustracion" aria-hidden="true"> <?= escapar($pelicula['icono']) ?> </div>
+            <h2> <?= escapar($pelicula['titulo']) ?> </h2>
+            <p class="precio"> <?= formatearEuros($pelicula['precio']) ?> </p>
+        </article>
+        <?php endforeach; ?>
+</div>
+<?php pie(); ?>
     
-</body>
-</html>
