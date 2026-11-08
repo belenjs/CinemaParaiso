@@ -1,6 +1,6 @@
 :root {
     font-family: system-ui, -apple-system, Segoe UI, sans-serif;
-    color: #B72818;
+    color: #58120a;
     background: #f5f7fb;
     line-height: 1.5
 }
@@ -24,7 +24,7 @@ a {
 }
 
 .cabecera {
-    background: #B72818;
+    background: #58120a;
     color: #f5f7fb;
 }
 
@@ -55,10 +55,79 @@ a {
     font-size: .92rem
 }
 
+.navbar nav a:hover {
+    color:#d6ba19;
+}
+
+.intro {
+    padding: 32px 0 20px
+}
+
+.intro h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin: 6px 0
+}
+
+.intro p {
+    max-width: 750px
+}
+
+.etiqueta {
+    color: #17638d;
+    font-weight: 800;
+    letter-spacing: .15em;
+    font-size: .76rem
+}
+
+.peliculas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    padding: 12px 0 48px
+}
+
+.tarjeta {
+    background: white;
+    color: #172536;
+    border: 3px solid #17638d;
+    border-radius: 15px;
+    box-shadow: 0 5px 22px #142b4710;
+    transition:  box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.tarjeta:hover {
+    box-shadow: 0 12px 24px #9f8a11;
+    transform: translateY(-4px);
+    border: 3px solid #9f8a11;
+}
+
+.tarjeta {
+    padding: 22px
+}
+
+.tarjeta h2 {
+    font-size: 1.15rem
+}
+
+.ilustracion {
+    display: grid;
+    place-items: center;
+    font-size: 3.4rem;
+    height: 110px;
+    background: #eff5fa;
+    border-radius: 12px
+}
+
+.precio {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #17638d
+}
+
 .pie {
     padding: 25px;
     text-align: center;
-    background: #B72818;
+    background: #58120a;
     color: #f5f7fb;
     font-size: .85rem
 }
