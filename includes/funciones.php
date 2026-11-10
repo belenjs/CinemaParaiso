@@ -10,6 +10,38 @@ function formatearEuros(float $cantidad): string {
     return number_format($cantidad, 2, ',', '.') . ' €';
 }
 
+function volver(string $pagina): never {
+    header('Location: ' . $pagina, true, 303);
+    exit;
+}
+
+function unidadesReserva(): int {
+      return array_sum($_SESSION['entradas']);
+}
+
+function totalReserva(array $peliculas): float {
+    $total = 0.0;
+
+    foreach ($_SESSION['entradas'] as $id => $cantidad) {
+        if(isset($peliculas[$id])) {
+            $total += $peliculas[$id]['precio'] * (int)$cantidad;
+        }
+
+    }
+    return $total;
+}
+
+function campoCsrf(): string
+{
+    $token = htmlspecialchars(
+        "prueba",
+        ENT_QUOTES,
+        'UTF-8'
+    );
+
+    return '<input type="hidden" name="csrf_token" value="' . $token . '">';
+}
+
 function cabecera(string $titulo): void {
     ?>
     <!DOCTYPE html>
@@ -26,7 +58,7 @@ function cabecera(string $titulo): void {
             <a class="marca" href="index.php">Cinema Paraíso</a>
             <nav aria-label="Navegación principal">
                 <a href="index.php">Cartelera</a>
-                <a href="index.php">Mis Entradas</a>
+                <a href="entradas.php">Mis Entradas (<?= unidadesReserva() ?>)</a>
                 <a href="index.php">Preferencias</a>
                 <a href="index.php">Sesión</a>
             </nav>

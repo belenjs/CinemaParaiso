@@ -87,6 +87,9 @@ a {
 }
 
 .tarjeta {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
     background: white;
     color: #172536;
     border: 3px solid #17638d;
@@ -123,6 +126,107 @@ a {
     font-weight: 800;
     color: #17638d
 }
+
+.tarjeta form {
+    margin-top: auto;
+}
+
+button,
+.boton {
+    display: inline-block;
+    background: #17638d;
+    color: white;
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 15px;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: .95rem
+}
+
+button:hover,
+.boton:hover {
+    filter: brightness(.92);
+    background-color: #58120a;
+    
+}
+
+.peligro {
+    background: #a83c42
+}
+
+.secundario {
+    background: #526579;
+    margin-bottom: 20px;
+    
+}
+
+.boton-actualizar {
+    background-color: #d6ba19;
+}
+
+.panel {
+    padding: 22px;
+    margin-bottom: 42px;
+    overflow-x: auto
+}
+
+.total {
+    text-align: right;
+    font-size: 1.4rem;
+    font-weight: 800
+}
+
+input,
+select {
+    font: inherit;
+    border: 1px solid #aab8c9;
+    border-radius: 7px;
+    padding: 8px;
+    max-width: 100%
+}
+
+label {
+    display: block;
+    font-weight: 650;
+    margin: 14px 0 6px
+}
+
+.estrecho input,
+.estrecho select {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px
+}
+
+.en-linea {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.en-linea input {
+    width: 68px
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 670px
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px 8px;
+    border-bottom: 1px solid #e1e7ee
+}
+
+th {
+    background: #f0f4f8
+}
+
 
 .pie {
     padding: 25px;
