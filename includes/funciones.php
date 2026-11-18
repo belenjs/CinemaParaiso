@@ -31,15 +31,32 @@ function totalReserva(array $peliculas): float {
     return $total;
 }
 
+function exigirPostValido(): void {
+    if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
+        http_response_code(405);
+        header('Allow: POST');
+        exit('Método no permitido.');
+    }
+}
+
 function campoCsrf(): string
 {
     $token = htmlspecialchars(
-        "prueba",
+        $_SESSION['csrf_token'],
         ENT_QUOTES,
         'UTF-8'
     );
 
     return '<input type="hidden" name="csrf_token" value="' . $token . '">';
+}
+
+function exigirCsrfValido(): void {
+    $token = $_POST['csrf_token'] ?? null;
+
+    if (!is_string($token) || !hash_equals($_SESSION['csrf_token'], $token)) {
+        http_response_code(403);
+        exit(('Token CSRF no válido'));
+    }
 }
 
 function cabecera(string $titulo): void {

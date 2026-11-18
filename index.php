@@ -19,6 +19,7 @@ cabecera('Cartelera');
             <p class="precio"> <?= formatearEuros($pelicula['precio']) ?> </p>
 
             <form action="agregar.php" method="post">
+                <?=  campoCsrf() ?> 
                 <input type="hidden" name="pelicula_id" value="<?= (int)$id ?>">
                 <button  class="button button-primary" type="submit">Reservar entrada</button>
             </form>
