@@ -76,7 +76,7 @@ function cabecera(string $titulo): void {
             <nav aria-label="Navegación principal">
                 <a href="index.php">Cartelera</a>
                 <a href="entradas.php">Mis Entradas (<?= unidadesReserva() ?>)</a>
-                <a href="index.php">Preferencias</a>
+                <a href="preferencias.php">Preferencias</a>
                 <a href="index.php">Sesión</a>
             </nav>
         </div>
